@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Generator</title>
+</head>
+<link
+rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet">
+<style>
+    
+    body {
+  background: black;
+  font-family: 'Nova Mono', monospace;
+}
+
+h1{
+font-size: 16px;
+color: #CCC;
+}
+
+#The-main-container{
+    border: 1px solid black;
+    width: 50%;
+    height: auto;
+    margin: auto;
+    padding: 8px 0px 8px 0px;
+    background: #24232B;
+}
+
+
+h1 {
+  text-align: center;
+  font-family: 'Nova Mono', monospace;
+}
+
+.password-container {
+    border: 1.5px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+}
+
+#for-black-space{
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 30px;
+    background:black;
+}
+
+#password-input {
+  width:30%;
+  padding: 7px;
+  border-style: hidden;
+  font-size: 19px;
+  background: #24232B;
+  color: white;
+}
+
+#copy-button {
+  padding: 7px 15px;
+  background: #24232B;
+  color:#4CAF50;
+  border: none;
+  cursor: pointer;
+}
+
+
+#CHRlength-container{
+    border: 1px dotted green;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    width: 90%;
+  margin: auto;
+  
+
+
+}
+
+.dragbar-container {
+    border: 2px solid white;
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+
+#dragbar-count{
+    color: #4CAF50;
+}
+
+/* style="accent-color:#A4FFAF"  */
+#dragbar {
+  width: 100%;
+  accent-color:#4CAF50 ;
+ }
+
+
+
+.options-container {
+    border: 1px solid red;
+  color: white;
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.options-container label {
+  margin-top: 5px;
+  display: block;
+  
+}
+
+
+.bar-container {
+    border: 1px dotted blue;
+  display: flex;
+ 
+  justify-content: space-between;
+  padding: 8px;
+  color: white;
+  background: #18171F;
+  width: 85%;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 10PX;
+  align-items: center;
+}
+
+.bar {
+ border: 1.5px solid white;
+  width: 6px;
+  height: 13px;
+  margin: 0 3px;
+  
+}
+
+.bar-second-container{
+    display: flex;
+}
+
+#generate-button {
+  display: block;
+  padding: 10px 20px;
+  background: #A4FFAF;
+  color: black;
+  border: none;
+  cursor: pointer;
+  border: 2px solid tomato;
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+
+
+
+
+</style>
+<body>
+
+    <h1>Password Generator</h1>    
+    <div id="The-main-container">
+
+  <div class="password-container">
+    <input id="password-input" type="text" readonly>
+    <button id="copy-button" onclick="copyPassword()">   <span class="material-symbols-outlined"> file_copy </span></button>
+  </div>
+
+<div id="for-black-space"></div>
+
+
+  <div id="CHRlength-container">
+<p>Character length</p>
+<p id="dragbar-count">0</p>
+  </div>
+
+  <div class="dragbar-container">
+    <input type="range" id="dragbar" min="0" max="10" value="0" oninput="updateBarColor(); updateDragbarCount();">
+  </div>
+  <div class="options-container">
+    <label><input type="checkbox" id="include-upper" onchange="updateBarColor()">Include Upper Letters</label>
+    <label><input type="checkbox" id="include-lower" onchange="updateBarColor()">Include Lower Letters</label>
+    <label><input type="checkbox" id="include-numbers" onchange="updateBarColor()">Include Numbers</label>
+    <label><input type="checkbox" id="include-symbols" onchange="updateBarColor()">Include Symbols</label>
+  </div>
+
+  <div class="bar-container">
+     <div>STRENGTH</div>
+     <div class="bar-second-container">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+  </div>
+  </div>
+
+  <button id="generate-button" onclick="generatePassword()">Generate &#8594 </button>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+<script>
+  
+</script>
