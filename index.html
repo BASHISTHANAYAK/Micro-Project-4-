@@ -215,4 +215,15 @@ h1 {
 
 <script>
   
+function copyPassword() {
+  var passwordInput = document.getElementById('password-input');
+  passwordInput.select();
+    document.execCommand("copy");
+  alert("Copied the password: " + passwordInput.value);
+}
+
+
+
+
+
 </script>
